@@ -1,0 +1,21 @@
+{
+  "scss.validate": false,
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+
+  "editor.inlayHints.fontFamily": "JetBrainsMono NF",
+  "editor.inlayHints.fontSize": 1,
+  "editor.inlayHints.padding": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  // You can set this to 'all' or 'literals' to enable more hints, default is none
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+  // You can set this to 'all' or 'literals' to enable more hints, default is none
+  "typescript.inlayHints.parameterNames.enabled": "all"
+}
