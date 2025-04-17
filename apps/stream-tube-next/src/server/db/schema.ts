@@ -32,15 +32,6 @@ const userRoles = ["user", "moderator", "admin"] as const;
 export type UserRoles = (typeof userRoles)[number][];
 export const rolesEnum = pgEnum("roles", userRoles);
 
-const userPermissions = [
-  "createCategory",
-  "updateCategory",
-  "deleteCategory",
-] as const;
-
-export type UserPermissions = typeof userPermissions;
-export const permissionsEnum = pgEnum("permissions", userPermissions);
-
 export const statusEnum = pgEnum("status", [
   "recent",
   "watched",
@@ -71,7 +62,6 @@ export const users = createTable("user", {
     .$defaultFn(() => crypto.randomUUID()),
   name: varchar("name", { length: 255 }).notNull(),
   role: rolesEnum().default("user").notNull(),
-  permissions: permissionsEnum().array().default([]),
   password: varchar("password").notNull(),
   email: varchar("email", { length: 255 }).unique().notNull(),
   emailVerified: timestamp("email_verified", {

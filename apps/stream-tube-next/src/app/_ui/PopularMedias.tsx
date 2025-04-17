@@ -1,0 +1,56 @@
+"use client";
+
+import Link from "next/link";
+import { MediaCard } from "./MediaCard";
+import MediasHeading from "./MediasHeading";
+
+type Item = {
+  id: string;
+  imdb_id: string;
+  poster: string | null;
+  name: string;
+  type: string;
+};
+
+function PopularMedias({
+  heading,
+  items,
+  collectionUniqueName,
+}: {
+  heading: string;
+  items: Item[];
+  collectionUniqueName?: string;
+}) {
+  return (
+    <section>
+      <div className="flex justify-between">
+        <MediasHeading>{heading}</MediasHeading>
+        {collectionUniqueName && (
+          <CollectionLink collectionUniqueName={collectionUniqueName} />
+        )}
+      </div>
+
+      <div className="flex min-w-0 shrink grow basis-0 gap-4 pb-6 select-none">
+        {items.map((item) => (
+          <MediaCard key={item.id} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default PopularMedias;
+
+export function CollectionLink({
+  collectionUniqueName,
+}: {
+  collectionUniqueName: string;
+}) {
+  return (
+    <Link
+      href={`/collections/${"670b4a4dbca43552aa3f4af6"}/${collectionUniqueName}`}
+    >
+      Show All
+    </Link>
+  );
+}

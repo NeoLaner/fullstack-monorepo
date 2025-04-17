@@ -29,8 +29,18 @@ const config = {
     return [
       // Basic redirect
       {
-        source: "/auth",
-        destination: "/auth/login",
+        source: "/",
+        destination: "/home",
+        permanent: true,
+      },
+      {
+        source: "/settings",
+        destination: "/settings/account",
+        permanent: true,
+      },
+      {
+        source: "/help",
+        destination: "/help/about-us",
         permanent: true,
       },
     ];
@@ -40,21 +50,72 @@ const config = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "wallpapers.com",
+        hostname: "images.metahub.space",
         port: "",
-        pathname: "/**",
+        pathname: "/poster/**",
       },
       {
         protocol: "https",
-        hostname: "justposters.com.au",
+        hostname: "images.metahub.space",
         port: "",
-        pathname: "/**",
+        pathname: "/background/**",
       },
       {
         protocol: "https",
-        hostname: "variety.com",
+        hostname: "images.metahub.space",
+        port: "",
+        pathname: "/logo/**",
+      },
+      {
+        protocol: "https",
+        hostname: "live.metahub.space",
+        port: "",
+        pathname: "/poster/**",
+      },
+      {
+        protocol: "https",
+        hostname: "live.metahub.space",
+        port: "",
+        pathname: "/background/**",
+      },
+      {
+        protocol: "https",
+        hostname: "live.metahub.space",
+        port: "",
+        pathname: "/logo/**",
+      },
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
+        port: "",
+        pathname: "/images/**",
+      },
+      //episodes
+      {
+        protocol: "https",
+        hostname: "episodes.metahub.space",
         port: "",
         pathname: "/**",
+      },
+      //addons
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+        port: "",
+        pathname: "**",
+      },
+      //users profile
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+        port: "",
+        pathname: "**",
       },
     ],
   },
